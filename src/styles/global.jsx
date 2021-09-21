@@ -30,13 +30,13 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto Slab', serif;
     overflow-x: hidden;
   }
-  h1 {
+  /* h1 {
       font-family: 'Roboto', serif;
 }
 
 h2, h3 {
     font-family: 'Rowdies', cursive;
-  }
+  } */
 
   input {
     outline: none;
