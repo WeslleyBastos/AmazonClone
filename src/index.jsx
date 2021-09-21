@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import {ConfigProvider} from "antd";
+import {BrowserRouer} from "react-router-dom"
+import ptBr from "antd/lib/locale/pt_BR";
+import Providers from './providers';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Providers>
+      <BrowserRouer>
+        <ConfigProvider locale={ptBr}>
+           <App />
+        </ConfigProvider>
+      </BrowserRouer>
+    </Providers>
   </React.StrictMode>,
   document.getElementById('root')
 );
