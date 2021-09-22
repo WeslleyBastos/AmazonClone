@@ -1,4 +1,5 @@
 import { Switch, Route } from "react-router-dom"
+import { PageNotFound } from "../pages/Error"
 import { Login } from "../pages/LoginPage"
 import { RegisterPage } from "../pages/RegisterPage"
 
@@ -17,6 +18,7 @@ export const Routes = () => {
             <Route exact path="/login">
                 <Login />
             </Route>
+
         </Switch>
     )
 }
