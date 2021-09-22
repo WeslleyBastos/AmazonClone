@@ -41,12 +41,15 @@ h2, h3 {
   input {
     outline: none;
   }
+  
   select {
     outline: none;
   }
 
   button {
     cursor: pointer;
+    font-family: 'Roboto', serif;
+    
   }
 
   ::-webkit-scrollbar{

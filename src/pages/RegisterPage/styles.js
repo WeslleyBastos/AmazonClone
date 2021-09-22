@@ -47,6 +47,7 @@ export const Form = styled.form `
         width: 90%;
         height: 31px;
         border-radius: 3px;
+        border: 2.5px solid gray;
     }
 
     input[type=text]:hover {
