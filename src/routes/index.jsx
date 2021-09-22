@@ -1,4 +1,5 @@
 import { Switch, Route } from "react-router-dom"
+import { Login } from "../pages/LoginPage"
 import { RegisterPage } from "../pages/RegisterPage"
 
 export const Routes = () => {
@@ -14,7 +15,7 @@ export const Routes = () => {
 
 
             <Route exact path="/login">
-                
+                <Login />
             </Route>
         </Switch>
     )
