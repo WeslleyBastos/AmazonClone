@@ -3,7 +3,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup"
 import logoAmazon from "../../assets/amazon-logo.svg"
 import { Container, Footer, Form, Header } from "./styles";
-import { Link } from "react-router-dom"
 
 export const Login = () => {
 
