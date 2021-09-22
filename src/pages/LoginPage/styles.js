@@ -59,7 +59,7 @@ export const Form = styled.form `
     }
 
     input[type=checkbox], .span-KeepMeConnected {
-        margin-left: -8.5rem;
+        margin-left: -7.5rem;
         font-size: 0.9rem;
         font-family: Roboto, sans-serif;
         height: 1rem;
@@ -68,7 +68,7 @@ export const Form = styled.form `
 
     .span-KeepMeConnected {
         color: #000;
-        margin-left: -9.1rem;
+        margin-left: -8rem;
     }
 
     button {
