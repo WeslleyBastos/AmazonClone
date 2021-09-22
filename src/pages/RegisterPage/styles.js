@@ -14,7 +14,7 @@ export const Container = styled.main `
 
 export const Header = styled.header `
     img {
-        height: 72.42px;
+        height: 100.42px;
         width: 150.21px;
         padding: 1.5rem;
     }
@@ -47,6 +47,7 @@ export const Form = styled.form `
         width: 90%;
         height: 31px;
         border-radius: 3px;
+        border: 2.5px solid gray;
     }
 
     input[type=text]:hover {

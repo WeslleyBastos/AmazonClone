@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup"
-import logoAmazon from "../../assets/amazon-logo.svg"
+import amazonLogo from "../../assets/amazonLogo.png"
 import { Container, Footer, Form, Header } from "./styles";
 import { Link } from "react-router-dom"
 
@@ -26,7 +26,7 @@ export const RegisterPage = () => {
     return (
         <Container>
            <Header>
-               <img src={logoAmazon} alt="LOGO-AMAZON" />
+               <img src={amazonLogo} alt="LOGO-AMAZON" />
            </Header> 
 
             <Form onSubmit={handleSubmit(onSubFunc)}>

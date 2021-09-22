@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <Routes />
-      {/* <GlobalStyle /> */}
+      <GlobalStyle />
     </div>
   );
 }
