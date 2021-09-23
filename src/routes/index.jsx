@@ -23,6 +23,10 @@ export const Routes = () => {
                 <ProductPage />
             </Route>
 
+            <Route path="*">
+                <InfoClient />
+            </Route>
+
         </Switch>
     )
 }

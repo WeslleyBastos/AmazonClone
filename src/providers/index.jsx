@@ -1,11 +1,13 @@
+import { AuthenticationProvider } from "./Authentication";
+import { CepProvider } from "./CepProvider";
+
 const Providers = ({ children }) => {
     return (
-    <div>
-        <div>
-            {children}
-        </div>
-    </div>
-       
+        <AuthenticationProvider>
+            <CepProvider>
+                    {children}
+            </CepProvider>
+        </AuthenticationProvider>
     );
   };
   
