@@ -22,11 +22,6 @@ export const Routes = () => {
             <Route exact path="/products">
                 <ProductPage />
             </Route>
-
-            <Route path="*">
-                <InfoClient />
-            </Route>
-
         </Switch>
     )
 }
