@@ -1,10 +1,16 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+// import { useHistory, Redirect } from "react-router-dom"
 import * as yup from "yup"
 import amazonLogo from "../../assets/amazonLogo.png"
 import { Container, Footer, Form, Header } from "./styles";
+// import { useAuthentication } from "../../providers/Authentication";
 
 export const Login = () => {
+
+    // const history = useHistory();
+
+    // const { authenticated, setAuthenticated } = useAuthentication();
 
     const formSchema = yup.object().shape({
         email: yup.string().email("Campo inválido").required("Campo obrigatório"),
@@ -19,7 +25,20 @@ export const Login = () => {
 
     const onSubFunc = (data) => {
         console.log(data)
+        // api.post(`/login/`, data)
+        // .then(_ => {
+        //     alert("Cadastro concluído");
+        //     setAuthenticated(true)
+        //     const { access } = res.data
+        //     localStorage.setItem("@token/auth", JSON.stringify(access));
+        //     history.push("/login")
+        // })
+        // .catch(_ => alert("E-mail ou usuário já cadastrado"))
     }
+
+    // if(authenticated) {
+    //     return <Redirect to={"/"} />
+    // }
 
 
     return (
