@@ -3,6 +3,7 @@ import { Login } from "../pages/LoginPage"
 import { RegisterPage } from "../pages/RegisterPage"
 import ProductPage from "../pages/Product"
 import Home from "../pages/Home"
+import { PageNotFound } from "../pages/Error"
 
 export const Routes = () => {
     return (
@@ -15,11 +16,11 @@ export const Routes = () => {
                 <RegisterPage />
             </Route>
 
-            <Route exact path="/login">
+            <Route path="/login">
                 <Login />
             </Route>
 
-            <Route exact path="/products">
+            <Route path="/products">
                 <ProductPage />
             </Route>
         </Switch>
