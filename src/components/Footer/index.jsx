@@ -55,8 +55,8 @@ export const Footer = () => {
                     <p>Help</p>
                 </div>
 
-                <hr />
-
+                <hr/>
+             
                 <footer className="footer-info">
                     <img src={logoAmazon} alt="logo" />
 

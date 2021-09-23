@@ -77,7 +77,7 @@ export const FooterItems = styled.main `
         
         .usa-image {
             display: flex;
-            margin-left: 1rem;
+            margin-left: 2.1rem;
             border: 1.5px solid lightgray;
             padding-left: 4rem;
         }
