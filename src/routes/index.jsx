@@ -25,9 +25,7 @@ export const Routes = () => {
                 <ProductPage />
             </Route>
 
-            <Route path="*">
-                <Footer />
-            </Route>
+
         </Switch>
     )
 }
