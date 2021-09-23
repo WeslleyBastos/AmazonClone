@@ -29,6 +29,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
     font-family: 'Roboto Slab', serif;
     overflow-x: hidden;
+    text-rendering: optimizeLegibility;
   }
   /* h1 {
       font-family: 'Roboto', serif;

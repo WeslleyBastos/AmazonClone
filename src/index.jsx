@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import "antd/dist/antd.css";
 import {ConfigProvider} from "antd";
-import {BrowserRouter} from "react-router-dom"
 import ptBr from "antd/lib/locale/pt_BR";
+import {BrowserRouter} from "react-router-dom"
 import Providers from './providers';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
