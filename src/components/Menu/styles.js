@@ -16,8 +16,8 @@ export const SearchBox = styled.div`
     .setUser{
         color: var(--white);
         margin: 1% 0 0 1%;
-        font-size: 1em;
-        line-height: 10px;
+        font-size: 15px;
+        line-height: 25px;
 
         .account{
         color: var(--white);

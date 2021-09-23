@@ -19,12 +19,12 @@ export const SearchBox = styled.div`
     .click-to-search{
         background-color:var(--orange);
         width: 52px;
-        height: 46px;
+        height: 39px;
         margin: 9px 0px 0px -70px;
     }
     svg{
-        width: 50px;
-        height: 25px;
+        width: 40px;
+        height: 20px;
         margin: 8px 0 0 0;
         color: white;
     }
