@@ -1,11 +1,10 @@
+import { CepProvider } from "./CepProvider";
+
 const Providers = ({ children }) => {
     return (
-    <div>
-        <div>
-            {children}
-        </div>
-    </div>
-       
+        <CepProvider>
+                {children}
+        </CepProvider>
     );
   };
   

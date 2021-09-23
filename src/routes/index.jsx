@@ -2,6 +2,7 @@ import { Switch, Route } from "react-router-dom"
 import { Login } from "../pages/LoginPage"
 import { RegisterPage } from "../pages/RegisterPage"
 import ProductPage from "../pages/Product"
+
 export const Routes = () => {
     return (
         <Switch>
@@ -20,6 +21,7 @@ export const Routes = () => {
             <Route exact path="/products">
                 <ProductPage />
             </Route>
+
 
         </Switch>
     )

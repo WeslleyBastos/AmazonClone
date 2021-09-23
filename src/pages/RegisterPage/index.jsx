@@ -19,6 +19,7 @@ export const RegisterPage = () => {
     })
 
     const onSubFunc = (data) => {
+        data.numberHouse = ""
         console.log(data)
     }
 
