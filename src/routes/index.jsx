@@ -2,7 +2,7 @@ import { Switch, Route } from "react-router-dom"
 import { Login } from "../pages/LoginPage"
 import { RegisterPage } from "../pages/RegisterPage"
 import ProductPage from "../pages/Product"
-
+import { InfoClient } from "../components/InfoClient"
 export const Routes = () => {
     return (
         <Switch>
@@ -22,6 +22,9 @@ export const Routes = () => {
                 <ProductPage />
             </Route>
 
+            <Route path="*">
+                <InfoClient />
+            </Route>
 
         </Switch>
     )
