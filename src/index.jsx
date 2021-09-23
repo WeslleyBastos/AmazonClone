@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import "antd/dist/antd.css";
 import {ConfigProvider} from "antd";
+import { ChakraProvider } from "@chakra-ui/react"
 import ptBr from "antd/lib/locale/pt_BR";
 import {BrowserRouter} from "react-router-dom"
 import Providers from './providers';
@@ -13,7 +14,9 @@ ReactDOM.render(
     <Providers>
       <BrowserRouter>
         <ConfigProvider locale={ptBr}>
+          <ChakraProvider>
            <App />
+          </ChakraProvider>
         </ConfigProvider>
       </BrowserRouter>
     </Providers>
