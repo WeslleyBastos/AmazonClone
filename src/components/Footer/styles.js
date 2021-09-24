@@ -30,10 +30,6 @@ export const FooterItems = styled.main `
         margin-top: -7.2rem;
     }
 
-    /* .up-first {
-        margin-top: -5.8rem;
-    } */
-
     .footer-items {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -79,23 +75,22 @@ export const FooterItems = styled.main `
             display: flex;
             margin-left: 2.1rem;
             border: 1.5px solid lightgray;
-            padding-left: 4rem;
+            padding-left: 3rem;
         }
 
         .usa-image img {
             height: 20px;
             width: 25px;
             position: relative;
-            left: -3.5rem;
+            left: -2.5rem;
         }
 
         .usa-image span {
             font-size: 0.6rem;
             position: relative;
-            left: -3rem;
+            left: -2rem;
             top: 0.2rem;
-            font-weight: bold;
-            
+            font-weight: bold;    
         }
     }
 `
