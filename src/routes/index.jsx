@@ -3,7 +3,7 @@ import { Login } from "../pages/LoginPage"
 import { RegisterPage } from "../pages/RegisterPage"
 import ProductPage from "../pages/Product"
 import Home from "../pages/Home"
-import { CardRecommendation } from "../components/CardRecommendation"
+import { Cart } from "../components/Cart"
 
 export const Routes = () => {
     return (
@@ -25,7 +25,7 @@ export const Routes = () => {
             </Route>
 
             <Route path="*">
-                <CardRecommendation />
+                <Cart />
             </Route>
         </Switch>
     )
