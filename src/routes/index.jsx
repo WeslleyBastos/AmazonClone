@@ -3,7 +3,7 @@ import { Login } from "../pages/LoginPage"
 import { RegisterPage } from "../pages/RegisterPage"
 import ProductPage from "../pages/Product"
 import Home from "../pages/Home"
-import { PageNotFound } from "../pages/Error"
+import { CardRecommendation } from "../components/CardRecommendation"
 
 export const Routes = () => {
     return (
@@ -22,6 +22,10 @@ export const Routes = () => {
 
             <Route path="/products">
                 <ProductPage />
+            </Route>
+
+            <Route path="*">
+                <CardRecommendation />
             </Route>
         </Switch>
     )
