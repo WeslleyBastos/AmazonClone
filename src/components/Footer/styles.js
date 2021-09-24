@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const FooterItems = styled.main `
     position: absolute;
-    top: 35%;
+    top: 95%;
     width: 99vw;
     left: 0.24%;
 
