@@ -1,21 +1,23 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-// import { useHistory, Redirect } from "react-router-dom"
+import { useHistory, Redirect } from "react-router-dom"
 import * as yup from "yup"
 import amazonLogo from "../../assets/amazonLogo.png"
 import { Container, Footer, Form, Header } from "./styles";
-// import { useAuthentication } from "../../providers/Authentication";
+import { useAuthentication } from "../../providers/Authentication";
+import axios from "axios"
+import { api } from "../../services";
 
 export const Login = () => {
 
-    // const history = useHistory();
+    const history = useHistory();
 
-    // const { authenticated, setAuthenticated } = useAuthentication();
+    const { authenticated, setAuthenticated } = useAuthentication();
 
     const formSchema = yup.object().shape({
         email: yup.string().email("Campo inválido").required("Campo obrigatório"),
-        password: yup.string().required("Campo obrigatório"),
-        KeepMeConnected: yup.boolean().oneOf([true], "Você Deve aceitar os termos.")
+        password: yup.string().required("Campo obrigatório")
+        // KeepMeConnected: yup.boolean().oneOf([true], "Você Deve aceitar os termos.")
 
     })
 
@@ -25,20 +27,19 @@ export const Login = () => {
 
     const onSubFunc = (data) => {
         console.log(data)
-        // api.post(`/login/`, data)
-        // .then(_ => {
-        //     alert("Cadastro concluído");
-        //     setAuthenticated(true)
-        //     const { access } = res.data
-        //     localStorage.setItem("@token/auth", JSON.stringify(access));
-        //     history.push("/login")
-        // })
-        // .catch(_ => alert("E-mail ou usuário já cadastrado"))
+        api.post("/login", data)
+        .then(res => {
+            setAuthenticated(true)
+            const { accessToken } = res.data
+            localStorage.setItem("@token/auth", JSON.stringify(accessToken));
+            history.push("/")
+        })
+        .catch(_ => alert("E-mail ou usuário já cadastrado"))
     }
 
-    // if(authenticated) {
-    //     return <Redirect to={"/"} />
-    // }
+    if(authenticated) {
+        return <Redirect to={"/"} />
+    }
 
 
     return (
@@ -56,10 +57,10 @@ export const Login = () => {
                 <label>Senha</label>
                 <input type="text" {...register("password")} />
 
-                <div>
+                {/* <div>
                     <input type="checkbox" {...register("KeepMeConnected")} />
                     <span className="span-KeepMeConnected">Mantenha-me conectado</span>
-                </div>
+                </div> */}
 
                 <div>
                     <button type="submit">Continuar</button>
