@@ -1,9 +1,15 @@
 import { Switch, Route } from "react-router-dom"
 import { Login } from "../pages/LoginPage"
 import { RegisterPage } from "../pages/RegisterPage"
-import ProductPage from "../pages/Product"
 import Home from "../pages/Home"
+import { CardProducts } from "../components/CardProducts"
+import ProductContent from "../components/ProductContent"
 import { Cart } from "../components/Cart"
+import { FilteredProductsA } from "../pages/CategoryA"
+import { FilteredProductsB } from "../pages/CategoryB"
+import { FilteredProductsC } from "../pages/CategoryC"
+import { FilteredProductsD } from "../pages/CategoryD"
+
 
 export const Routes = () => {
     return (
@@ -20,12 +26,33 @@ export const Routes = () => {
                 <Login />
             </Route>
 
-            <Route path="/products">
-                <ProductPage />
+            <Route exact path="/products/:id">
+                <ProductContent />
             </Route>
 
-            <Route path="*">
+            <Route path="/cart">
                 <Cart />
+            </Route>
+
+            <Route path="/filteredCatA">
+                <FilteredProductsA />
+            </Route>
+
+            <Route path="/filteredCatB">
+                <FilteredProductsB />
+            </Route>
+
+            <Route path="/filteredCatC">
+                <FilteredProductsC />
+            </Route>
+
+            <Route path="/filteredCatD">
+                <FilteredProductsD />
+            </Route>
+
+
+            <Route path="*">
+                <CardProducts />
             </Route>
         </Switch>
     )

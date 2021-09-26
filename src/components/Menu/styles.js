@@ -6,6 +6,7 @@ export const SearchBox = styled.div`
     height: 12vh;
     display: flex;
     align-items: center;
+    
 
     img{
         width: 180px;
@@ -36,6 +37,7 @@ export const MenuBox = styled.div`
     height: 5vh;
     display: flex;
     justify-content: space-between;
+    z-index: 1000;
 
     p{
         color: white;

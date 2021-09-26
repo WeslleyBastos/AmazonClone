@@ -15,7 +15,7 @@ export const RegisterPage = () => {
     const { authenticated } = useAuthentication();
 
     const formSchema = yup.object().shape({
-        username: yup.string().required("Campo obrigatório"),
+        username: yup.string().required("Campo obrigatório").max(12, null),
         email: yup.string().email("Campo inválido").required("Campo obrigatório"),
         password: yup.string().required("Campo obrigatório"),
         confirmPassword: yup.string().oneOf([yup.ref("password")], "Os campos precisam ser iguais")
@@ -53,10 +53,10 @@ export const RegisterPage = () => {
                 <input type="text" {...register("email")}/>
 
                 <label>Senha</label>
-                <input type="text" {...register("password")} />
+                <input type="password" {...register("password")} />
 
                 <label>Insira a senha nova mais uma vez</label>
-                <input type="text" {...register("confirmPassword")}/>
+                <input type="password" {...register("confirmPassword")}/>
                 {errors.confirmPassword && errors.confirmPassword.message}
 
                 <div>

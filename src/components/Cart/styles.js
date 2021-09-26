@@ -1,31 +1,29 @@
 import styled from "styled-components"
 
+
 export const ContainerItemsCart = styled.main `
     display: flex;
     flex-direction: column;
-   
-   
-`
+    overflow-y: scroll 50px;
+    overflow-x: hidden;
+    `
 
 export const ContainerCart = styled.div `
-    display: flex;
-    background-color: lightgray;
-    height: 100vh;
-
     .container-items {
-        margin: 2% 5%;
-        width: 65vw;
-        height: 55vh;
+        margin: 2% 7%;
+        width: 63vw;
+        height: 39.2vh;
         box-shadow: 0 0 3pt 1pt rgba(0, 0, 0, 0.1);
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         background-color: #fff;
-        padding-top: 2rem;
+        gap: 15px;
+        padding-top: 1.5rem;
         flex-wrap: wrap;
         
         .cart-buy {
             position: absolute;
-            top: 22%;
+            top: 20%;
             left: 100px;
             font-weight: 550;
             font-size: 1.8rem;
@@ -44,14 +42,14 @@ export const ContainerCart = styled.div `
             height: 0px;
             width: 100%;
             position: relative; 
-            top: -25%;
+            top: -40%;
         }
 
         .subtotal {
             position: relative;
-            top: -26%;
+            top: -42%;
             margin-left: auto;
-            margin-right: 10px;
+            margin-right: 50px;
             font-weight: 500;
             font-size: 1.2rem;
 
@@ -62,12 +60,13 @@ export const ContainerCart = styled.div `
         }
 
         img {
-            width: 240px;
-            height: 132px;
+            width: 150px;
+            height: 102px;
         }
 
         h1, h2 {
             font-weight: bold;
+            margin-left: -7rem;
         }
     }
 
@@ -79,16 +78,16 @@ export const ContainerCart = styled.div `
         img {
             height: 25px;
             width: 140px;
-            margin-left: 5rem;
+            margin-left: 1rem;
             position: relative;
             top: -190%;
-            left: 25%;
+            left: 30%;
         }
 
         p {
             position: relative;
             top: -190%;
-            left: -1%;
+            left: -8%;
             font-size: 0.9rem;
             color: gray;
             text-align: center;
@@ -124,74 +123,6 @@ export const ContainerCart = styled.div `
         span {
             font-size: 0.9rem;
             margin: 0.5rem;
-        }
-    }
-
-    .sub-frete {
-        width: 25vw;
-        height: 35vh;
-        box-shadow: 0 0 3pt 1pt rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        border: 1.5px solid lightgray;
-        justify-content: center;
-        align-items: center;
-        margin: 25px;
-        gap: 1rem;
-        text-align: center;
-        background-color: #fff;
-
-        h2 {
-            font-size: 1.4rem;
-        }
-
-
-        .verificado-text {
-            display: flex;
-        }
-
-        img {
-            height: 20px;
-            width: 20px;
-            margin-left: 7px;
-        }
-
-        .bold-span {
-            font-weight: bold;
-        }
-
-        .span-parent {
-            color: #222;
-            font-weight: 300;
-
-            span {
-                color: #00DF76;
-            }
-        }
-
-        .input-span {
-            display: flex;
-            flex-direction: row;
-
-            span {
-                display: block;
-                margin-top: -0.25rem;
-                margin-left: 0.5rem;
-            }
-        }
-
-        .btn {
-            width: 85%;
-            background-color: #FFD809;
-            color: #000;
-            text-align: center;
-            height: 2.01rem;
-            line-height: 2rem;
-            border-radius: 6px;
-        }
-        
-        .btn button {
-            font-weight: bold;
         }
     }
 `

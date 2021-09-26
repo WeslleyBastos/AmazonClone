@@ -35,7 +35,7 @@ export const CarouselBanner = () => {
         ssr={true}
         infinite={true}
         autoPlay={true}
-        autoPlaySpeed={5000}
+        autoPlaySpeed={3000}
         keyBoardControl={true}
         customTransition="transform 500ms ease-in-out"
         transitionDuration={500}
@@ -45,22 +45,22 @@ export const CarouselBanner = () => {
         focusOnSelect={true}
       >
         <Container>
-          <Link to="/products/brand/royalcannin">
+          <Link to="/">
             <img src={Banner1} alt="Ração" />
           </Link>
         </Container>
         <Container>
-          <Link to="/products/brand/ibasaebeeps">
+          <Link to="/">
             <img src={Banner2} alt="SPA" />
           </Link>
         </Container>
         <Container>
-          <Link to="/yumiclub">
+          <Link to="/">
             <img src={Banner3} alt="Club" />
           </Link>
         </Container>
         <Container>
-          <Link to="/products/promotion/inverno">
+          <Link to="/">
             <img src={Banner4} alt="Inverno" />
           </Link>
         </Container>

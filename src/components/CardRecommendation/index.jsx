@@ -5,10 +5,13 @@ import fone3 from "../../assets/fone3.png"
 import sports from "../../assets/sports.png"
 import bolsa from "../../assets/bolsa.png"
 import ipad from "../../assets/gears1.png"
+import { useHistory } from "react-router"
 
 import { CartParent } from "./styles"
 
 export const CardRecommendation = () => {
+
+    const history = useHistory();
     return (
         <CartParent>
            <div className="card-recommendation">
@@ -23,7 +26,7 @@ export const CardRecommendation = () => {
            <div className="card-recommendation sports">
                <h4>Seção Esportes</h4>
                 <img src={sports} alt="bolsa" />
-                <p>See more &gt; </p>
+                <p onClick={() => history.push('/filteredCatD')}>See more &gt; </p>
            </div>
 
            <div className="card-recommendation sports">

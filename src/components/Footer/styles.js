@@ -4,6 +4,7 @@ export const FooterItems = styled.main `
     position: absolute;
     top: 95%;
     width: 99vw;
+    margin-top: 11rem;
     left: 0.24%;
 
     .back-to-top {

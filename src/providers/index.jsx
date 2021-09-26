@@ -1,12 +1,18 @@
 import { AuthenticationProvider } from "./Authentication";
+import { CartProvider } from "./CartProvider";
+import { ProductsProvider } from "./Products";
 import { CepProvider } from "./CepProvider";
 
 const Providers = ({ children }) => {
     return (
         <AuthenticationProvider>
-            <CepProvider>
-                    {children}
-            </CepProvider>
+            <CartProvider>
+                <ProductsProvider>
+                    <CepProvider>
+                            {children}
+                    </CepProvider>
+                </ProductsProvider>
+            </CartProvider>
         </AuthenticationProvider>
     );
   };
