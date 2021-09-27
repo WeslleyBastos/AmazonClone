@@ -5,16 +5,16 @@ export const CartParent = styled.main `
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 5%;
+    margin: 2%;
     
     .card-recommendation {
-        width: 200px;
+        width: 220px;
         border: 1.5px solid #D0CFCF;
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
         height: 270px;
-        margin: 0.5rem;
+        margin-left: 3rem;
         box-shadow: 0 0 3pt 2pt rgba(0, 0, 0, 0.1);
     }
 
@@ -29,6 +29,11 @@ export const CartParent = styled.main `
         font-size: 0.75rem;
         font-weight: 900;
         padding-left: 0.5rem;
+        cursor: pointer;
+    }
+
+    p:hover {
+        color: red;
     }
 
     .bolsa {

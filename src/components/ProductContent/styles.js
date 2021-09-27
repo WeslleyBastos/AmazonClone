@@ -6,7 +6,7 @@ export const MainContainer = styled.div`
         background-color: var(--dark-blue);
         width: 100vw;
         height: 8vh;
-        margin-bottom: 2rem;
+        margin-bottom: 5rem;
 
     }
 `
@@ -15,13 +15,14 @@ export const ProdContainer = styled.div`
       justify-content: space-around;
 `
 export const ImgContainer = styled.div`
-        width: 35vw;
+        width: 25vw;
         justify-content: center;
+        margin-top: 4rem;
 `
 export const InfoContainer = styled.div`
         width: 40vw;
         background-color:var(--blue);
-        margin-left: 2rem;
+        margin-left: 1.5rem;
 
         .brand{
             color: var(--anchor-blue);
@@ -33,7 +34,7 @@ export const InfoContainer = styled.div`
             font-size:12px;
             font-weight: bold;
             text-align: center;
-            width 110px;
+            width: 110px;
             background-color: var(--light-blue);
             
             .first{

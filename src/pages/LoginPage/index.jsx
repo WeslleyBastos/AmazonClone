@@ -5,8 +5,8 @@ import * as yup from "yup"
 import amazonLogo from "../../assets/amazonLogo.png"
 import { Container, Footer, Form, Header } from "./styles";
 import { useAuthentication } from "../../providers/Authentication";
-import axios from "axios"
 import { api } from "../../services";
+import jwt_decode from "jwt-decode";
 
 export const Login = () => {
 
@@ -16,8 +16,8 @@ export const Login = () => {
 
     const formSchema = yup.object().shape({
         email: yup.string().email("Campo inválido").required("Campo obrigatório"),
-        password: yup.string().required("Campo obrigatório")
-        // KeepMeConnected: yup.boolean().oneOf([true], "Você Deve aceitar os termos.")
+        password: yup.string().required("Campo obrigatório"),
+        KeepMeConnected: yup.boolean().oneOf([true], "Você Deve aceitar os termos.")
 
     })
 
@@ -30,8 +30,9 @@ export const Login = () => {
         api.post("/login", data)
         .then(res => {
             setAuthenticated(true)
-            const { accessToken } = res.data
-            localStorage.setItem("@token/auth", JSON.stringify(accessToken));
+            const { accessToken, name } = res.data
+            localStorage.setItem("@token/auth", JSON.stringify(accessToken, name));
+            localStorage.setItem("@token/userId",jwt_decode(res.data.accessToken).sub);
             history.push("/")
         })
         .catch(_ => alert("E-mail ou usuário já cadastrado"))
@@ -55,12 +56,12 @@ export const Login = () => {
                 <input type="text" {...register("email")} />
 
                 <label>Senha</label>
-                <input type="text" {...register("password")} />
+                <input type="password" {...register("password")} />
 
-                {/* <div>
+                <div>
                     <input type="checkbox" {...register("KeepMeConnected")} />
                     <span className="span-KeepMeConnected">Mantenha-me conectado</span>
-                </div> */}
+                </div>
 
                 <div>
                     <button type="submit">Continuar</button>

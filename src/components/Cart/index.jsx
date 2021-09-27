@@ -1,68 +1,64 @@
 import { ContainerCart, ContainerItemsCart } from "./styles"
 import  MenuNav  from "../Menu"
-import alexa from "../../assets/alexa.png"
 import rectangle from "../../assets/Rectangle84.png"
-import check from "../../assets/check.png"
 import { Footer } from "../Footer"
+import { useCart } from "../../providers/CartProvider"
+import { TotalPrice } from "../TotalPrice"
+import { useHistory } from "react-router"
+
 
 export const Cart = () => {
+
+    const { cart, removeItem, handleAddToCart } = useCart();
+    const history = useHistory();
+
     return (
-        <ContainerItemsCart>
-            <div className="teste">
-                <Footer style={{marginTop: "15rem"}}/>
-            </div>
+        <div> 
         <MenuNav />
+        <div style={{display: "flex", justifyContent: "space-between", backgroundColor: "lightgray", height: "100vh"}}>
+        <ContainerItemsCart>
+            {cart.map((car, index) => (
+                <main key={index}>
+               
         <ContainerCart>
-            {/* <h1>Carrinho de compras</h1> */}
             <div className="container-items">
-            <div className="cart-buy">
-                <h1>Carrinho de compras</h1>
-            </div>
+
             <hr className="hr-separator-two" />
             
-                <img src={alexa} alt="alexa" />
-                <h1>Echo Dot (3ª Geração): Smart Speaker com Alexa - Cor Preta</h1>
-                <h1>R$ 208,05</h1>
+                <img src={car.img_url} alt="alexa" />
+                <h1 style={{position: "relative", left: "-0.5rem"}}>{car.title.slice(0,50) + "..."}</h1>
+                <h1>R$ {car.price}</h1>
 
                 <div className="info-prod">
                     <img src={rectangle} alt="amazon" />
-                    <p>a vista ou em até 10x de<br /> 21,90 sem juros</p>
+                    <p>R${car.price} a vista ou em até 10x de<br /> R${car.installment.toFixed(2)}</p>
                 </div>
 
                 <div className="h3">
-                    <h3>Cor: Preta</h3>
+                    <h3>Cor: {car.color}</h3>
 
                 <div className="container-controll">
-                    <button>-</button>
-                    <span>0</span>
-                    <button>+</button>
+                    <button onClick={() => removeItem(car)}>-</button>
+                    <span>Qtd:{car.quantity}</span>
+
+                    <button onClick={() => handleAddToCart(car)}>+</button>
                 </div>
-                </div>
-
-                <hr className="hr-separator" />
-
-                <h1 className="subtotal">Subtotal (1item): <span>R$ 208,05</span></h1>
-            </div>
-
-            <div className="sub-frete">
-
-                <div className="verificado-text">
-                    <img src={check} alt="verificado" />
-
-                    <span className="span-parent"><span>Seu pedido se qualifica para frete gratis!</span> Selecione FRETE GRATIS ao finalizar a sua compra</span>
-                </div>
-
-                <h2>Subtotal (1 item): <span className="bold-span">R$ 208,05</span></h2>
-
-                <div className="input-span">
-                <input type="checkbox" /><span>Este item é um presente?</span>
-                </div>
-
-                <div className="btn">
-                    <button>Fechar pedido</button>
                 </div>
             </div>
         </ContainerCart>
+        </main>
+            ))}
         </ContainerItemsCart>
-    )
-}
+        {cart.length === 0 ? 
+            <div style={{display: "flex", flexDirection: "column", position: "relative", left: "-33rem", top: "9rem"}}>
+                <h1 style={{fontSize: "2.3rem", fontWeight: "450"}}>Carrinho vazio</h1>
+                <a onClick={() => history.push("/")} style={{color: "#1890ff", textAlign: "center"}}>Voltar as compras</a>
+            </div>
+                :
+                <TotalPrice />
+        }
+            </div>
+                <Footer />
+        </div>
+        )
+    }
