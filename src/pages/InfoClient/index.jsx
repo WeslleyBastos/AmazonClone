@@ -1,3 +1,4 @@
+import { useHistory } from "react-router"
 import iconeBox from "../../assets/icone1.png"
 import iconeKey from "../../assets/icone2.png"
 import iconePrime from "../../assets/icone3.png"
@@ -5,14 +6,18 @@ import iconeAddress from "../../assets/icone4.png"
 import iconePayment from "../../assets/icone5.png"
 import iconePresent from "../../assets/icone6.png"
 import iconeTicket from "../../assets/icone7.png"
+import MenuNav from "../../components/Menu"
 import { ContainerAllInfo, ContainerItems } from "./styles"
 
 
 export const InfoClient = () => {
 
+    const history = useHistory();
+
     const notAllowed = {cursor: "not-allowed"}
     return (
         <ContainerAllInfo>
+            <MenuNav />
                 <h1>Sua conta</h1>
             <ContainerItems>
 
@@ -28,7 +33,7 @@ export const InfoClient = () => {
                     <img src={iconeKey} alt="icone-trocar-senha" />
                     <div className="info-section-prods">
                         <h5>Acesso e segurança</h5>
-                        <p>Alterar o login, nome ou celular</p>
+                        <p>Alterar o usuário ou senha</p>
                     </div>
                 </div>
 
@@ -40,7 +45,7 @@ export const InfoClient = () => {
                     </div>
                 </div>
 
-                <div className="container-box">
+                <div className="container-box" onClick={() => history.push("/cepClient")}>
                     <img src={iconeAddress} alt="icone-endereço" />
                     <div className="info-section-prods">
                         <h5>Endereços</h5>

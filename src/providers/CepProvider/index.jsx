@@ -6,23 +6,16 @@ const CepContext = createContext();
 export const CepProvider = ({ children }) => {
 
     const [cepNumber, setCepNumber] = useState("")
-    const [numberHouse, setNumberHouse] = useState("")
-    const [complement, setComplement] = useState("")
-    const [cpf, setCpf] = useState("")
-    const [telephone, setTelephone] = useState("")
-    const [error, setError] = useState(false)
     const [ceps, setCeps] = useState({})
-    const [dados, setDados] = useState({})
 
     const handleSearchCep = () => {
-        const dados = { numberHouse: numberHouse}
         axios.get(`https://viacep.com.br/ws/${cepNumber}/json/`)
-        .then(res => {setCeps(res.data); setError(false)})
-        .catch(_ => setError(true))    
+        .then(res => setCeps(res.data))
+        .catch(err => console.log(err))    
     }
 
     return (
-        <CepContext.Provider value={{cepNumber, setCepNumber, error, setError, ceps, setCeps, handleSearchCep, numberHouse, setNumberHouse, complement, setComplement, cpf, setCpf, telephone, setTelephone, dados, setDados}}>
+        <CepContext.Provider value={{cepNumber, setCepNumber, ceps, handleSearchCep}}>
             {children}
         </CepContext.Provider>
     )

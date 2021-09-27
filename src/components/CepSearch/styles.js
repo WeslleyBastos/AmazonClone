@@ -6,15 +6,16 @@ export const ContainerParent = styled.main `
     align-items: center; 
     justify-content: space-between; 
     padding: 2rem;
-    background-color: #EAEDED;
+    background-color: lightgray; 
     height: 100vh;
 
     .info-address {
         width: 394px;
-        height: 504px;
+        height: 410px;
         border: 2px solid gray;
         margin-left: 5rem;
         padding: 1rem ;
+        gap: 15px;
         border-radius: 16px;
     }
 

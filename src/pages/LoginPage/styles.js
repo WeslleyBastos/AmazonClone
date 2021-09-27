@@ -48,6 +48,7 @@ export const Form = styled.form `
         height: 31px;
         border-radius: 3px;
         border: 2.5px solid gray;
+        accent-color: #f34f74;
     }
 
     input[type=text]:hover {

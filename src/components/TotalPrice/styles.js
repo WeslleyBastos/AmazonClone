@@ -5,7 +5,7 @@ height: 300px;
 
     .sub-frete {
         width: 25vw;
-        height: 35vh;
+        height: 37vh;
         box-shadow: 0 0 3pt 1pt rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
@@ -65,9 +65,23 @@ height: 300px;
             line-height: 2rem;
             border-radius: 6px;
         }
+
+        .btn-ceps {
+            width: 65%;
+            background-color: #f34f74;
+            color: #fff;
+            text-align: center;
+            height: 2.01rem;
+            line-height: 2rem;
+            border-radius: 6px;
+        }
         
         .btn button {
             font-weight: bold;
+        }
+
+        button:hover {
+            filter: brightness(90%);
         }
     }
 `

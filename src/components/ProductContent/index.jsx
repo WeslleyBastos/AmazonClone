@@ -16,16 +16,18 @@ import returns from "../../assets/returns.png"
 import amazonDelivered from "../../assets/amazonDelivered.png"
 import rating from "../../assets/rating-image.png"
 import {Divider} from "antd"
-import { useParams } from "react-router";
-import { useProducts } from "../../providers/Products"
+import { useParams, useHistory } from "react-router";
 import MenuNav from "../Menu"
+import { useCart } from "../../providers/CartProvider"
 
 const ProductContent = () => {
 
     const [productEspecific, setProductEspecific] = useState([])
+    const [select, setSelect] = useState("")
 
     const { id } = useParams();
-    const { handleAddToCart } = useProducts();
+    const { handleAddToCart } = useCart();
+    const history = useHistory();
 
     useEffect(() => {
         api.get(`/products/${id}`)
@@ -76,9 +78,13 @@ const ProductContent = () => {
 
                 <div className="frete"><span>Entrega elegivel com frete</span> <p>GRATIS!</p></div>
                 <span className="stock"> Em estoque</span>
-                <span className="quantity">Quantidade: 1</span>
+                <span className="quantity">Quantidade: 
+                    <select>
+                        <option>1</option>
+                    </select>
+                </span>
 
-                  <button  className="addToCart" onClick={() => handleAddToCart(prodss)}> Adicionar ao Carrinho</button>
+                  <button  className="addToCart" onClick={() => {handleAddToCart(prodss); history.push("/cart")}}> Adicionar ao Carrinho</button>
                 
                 <button className="addToFavorites"> Lista de desejos</button>
             </OrderContainer>

@@ -40,7 +40,7 @@ const MenuNav = () => {
                         : "Boa noite, "}
                         {userName}
                     </p>
-                <h3 className="account">Account and Lists</h3>
+                <h3 className="account" style={{cursor: "pointer"}} onClick={() => history.push("/InfoClient")}>Account and Lists</h3>
             </div>
             <RiShoppingCartLine className="cart" onClick={() => history.push("/cart")} title="Carrinho" style={{cursor: "pointer"}}/>
             <Badge size="default" count={cart.length}/>

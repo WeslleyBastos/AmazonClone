@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const ContainerAllInfo = styled.main `
      h1 {
         position: relative;
-        top: 3rem;
+        top: 0.5rem;
         left: 8%;
         font-size: 2.5rem;
     }
@@ -20,7 +20,7 @@ export const ContainerItems = styled.div `
     height: 70vh;
     border: 1.5px solid gray;
     box-shadow: 0 0 3pt 2pt #0202;
-    margin: 5% auto;
+    margin: 1.5% auto;
     display: flex;
     flex-wrap: wrap;
   

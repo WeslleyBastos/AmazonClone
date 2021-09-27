@@ -9,9 +9,6 @@ const ProductsContext = createContext();
 export const ProductsProvider = ({ children }) => {
 
     const [initialProducts, setInitialProducts] = useState([])
-    
-
-    const { cart, setCart } = useCart();
 
     useEffect(() => {
         api.get('/products')
@@ -20,14 +17,8 @@ export const ProductsProvider = ({ children }) => {
     }, [])
 
 
-    const handleAddToCart = (item) => {
-            setCart([...cart, item])
-            localStorage.setItem("cart", JSON.stringify(cart))
-    }
-
-
     return (
-        <ProductsContext.Provider value={{initialProducts, handleAddToCart}}>
+        <ProductsContext.Provider value={{initialProducts}}>
             {children}
         </ProductsContext.Provider>
     )

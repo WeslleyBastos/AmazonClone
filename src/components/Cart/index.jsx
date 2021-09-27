@@ -4,13 +4,13 @@ import rectangle from "../../assets/Rectangle84.png"
 import { Footer } from "../Footer"
 import { useCart } from "../../providers/CartProvider"
 import { TotalPrice } from "../TotalPrice"
-
-// import MenuNav from "../../components/Menu"
+import { useHistory } from "react-router"
 
 
 export const Cart = () => {
 
-    const { cart, removeItem } = useCart();
+    const { cart, removeItem, handleAddToCart } = useCart();
+    const history = useHistory();
 
     return (
         <div> 
@@ -39,20 +39,24 @@ export const Cart = () => {
 
                 <div className="container-controll">
                     <button onClick={() => removeItem(car)}>-</button>
-                    <span>0</span>
-                    <button>+</button>
+                    <span>Qtd:{car.quantity}</span>
+
+                    <button onClick={() => handleAddToCart(car)}>+</button>
                 </div>
                 </div>
-
-                <hr className="hr-separator" />
-
-                <h1 style={{position: "relative", left: "-1.5rem"}}className="subtotal">Subtotal (1item): <span>R$ {car.price}</span></h1>
             </div>
         </ContainerCart>
         </main>
             ))}
         </ContainerItemsCart>
-            <TotalPrice />
+        {cart.length === 0 ? 
+            <div style={{display: "flex", flexDirection: "column", position: "relative", left: "-33rem", top: "9rem"}}>
+                <h1 style={{fontSize: "2.3rem", fontWeight: "450"}}>Carrinho vazio</h1>
+                <a onClick={() => history.push("/")} style={{color: "#1890ff", textAlign: "center"}}>Voltar as compras</a>
+            </div>
+                :
+                <TotalPrice />
+        }
             </div>
                 <Footer />
         </div>

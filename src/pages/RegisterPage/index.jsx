@@ -26,6 +26,11 @@ export const RegisterPage = () => {
     })
 
     const onSubFunc = (data) => {
+        data.cep =  ""
+        data.logradouro = ""
+        data.bairro = ""
+        data.localidade = ""
+        data.uf = ""
          api.post('/register', data)
         .then(_ => {alert("Cadastro concluído"); history.push("/login")})
         .catch(_ => alert("E-mail ou usuário já cadastrado"))

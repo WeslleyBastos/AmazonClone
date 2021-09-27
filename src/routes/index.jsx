@@ -9,6 +9,9 @@ import { FilteredProductsA } from "../pages/CategoryA"
 import { FilteredProductsB } from "../pages/CategoryB"
 import { FilteredProductsC } from "../pages/CategoryC"
 import { FilteredProductsD } from "../pages/CategoryD"
+import { InfoClient } from "../pages/InfoClient"
+import { CepPage } from "../pages/CepPage"
+import { Checkout } from "../pages/Checkout"
 
 
 export const Routes = () => {
@@ -50,6 +53,17 @@ export const Routes = () => {
                 <FilteredProductsD />
             </Route>
 
+            <Route path="/infoClient">
+                <InfoClient />
+            </Route>
+
+            <Route path="/cepClient">
+                <CepPage />
+            </Route>
+
+            <Route path="/Checkout">
+                <Checkout />
+            </Route>
 
             <Route path="*">
                 <CardProducts />

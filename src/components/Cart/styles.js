@@ -12,7 +12,7 @@ export const ContainerCart = styled.div `
     .container-items {
         margin: 2% 7%;
         width: 63vw;
-        height: 39.2vh;
+        height: 30vh;
         box-shadow: 0 0 3pt 1pt rgba(0, 0, 0, 0.1);
         display: flex;
         justify-content: space-around;

@@ -1,12 +1,14 @@
 import { useCart } from "../../providers/CartProvider"
 import { Total } from "./styles"
 import check from "../../assets/check.png"
+import { useHistory } from "react-router";
+
 
 export const TotalPrice = () => {
 
     const { cart } = useCart();
-
-    const total = cart.reduce((acc, tot) => tot.price + acc, 0)
+    const history = useHistory();
+    const total = cart.reduce((acc, tot) => acc + tot.quantity * tot.price, 0);
 
     return (
         <Total>
@@ -18,14 +20,14 @@ export const TotalPrice = () => {
                     <span className="span-parent"><span>Seu pedido se qualifica para frete gratis!</span> Selecione FRETE GRATIS ao finalizar a sua compra</span>
                 </div>
 
-                <h2>Subtotal (1 item): <span className="bold-span">R$ {total}</span></h2>
+                <h2>Subtotal ({cart.length} Items): <span className="bold-span">R$ {total.toFixed(2)}</span></h2>
 
                 <div className="input-span">
                     <input type="checkbox" /><span>Este item é um presente?</span>
                 </div>
 
-                <div className="btn">
-                    <button>Fechar pedido</button>
+                <div className="btn-ceps">
+                    <button onClick={() => history.push("/cepClient")}>Confirmar seus dados</button>
                 </div>
             </div>
         </Total>
