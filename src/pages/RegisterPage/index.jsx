@@ -1,17 +1,18 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup"
-// import { useHistory, Redirect } from "react-router-dom"
+import { useHistory, Redirect } from "react-router-dom"
 import amazonLogo from "../../assets/amazonLogo.png"
 import { Container, Footer, Form, Header } from "./styles";
 import { Link } from "react-router-dom"
-// import { useAuthentication } from "../../providers/Authentication";
+import { useAuthentication } from "../../providers/Authentication";
+import { api } from "../../services";
 
 export const RegisterPage = () => {
 
-    // const history = useHistory();
+    const history = useHistory();
 
-    // const { authenticated } = useAuthentication();
+    const { authenticated } = useAuthentication();
 
     const formSchema = yup.object().shape({
         username: yup.string().required("Campo obrigatório"),
@@ -25,15 +26,15 @@ export const RegisterPage = () => {
     })
 
     const onSubFunc = (data) => {
-         // api.post(`/register/`, data)
-        // .then(_ => {alert("Cadastro concluído"); history.push("/login")})
-        // .catch(_ => alert("E-mail ou usuário já cadastrado"))
+         api.post('/register', data)
+        .then(_ => {alert("Cadastro concluído"); history.push("/login")})
+        .catch(_ => alert("E-mail ou usuário já cadastrado"))
     }
 
 
-      // if(authenticated) {
-    //     return <Redirect to={"/"} />
-    // }
+      if(authenticated) {
+        return <Redirect to={"/"} />
+    }
 
 
     return (
