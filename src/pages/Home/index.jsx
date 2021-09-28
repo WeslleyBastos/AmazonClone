@@ -4,11 +4,13 @@ import { CardRecommendation } from "../../components/CardRecommendation"
 import { CarouselBanner } from "../../components/Carousel"
 import { Footer } from "../../components/Footer"
 import MenuNav from "../../components/Menu"
-
+import { useEffect } from "react"
 
 const Home = () => {
 
-
+    useEffect(() => {
+        setInterval(() => localStorage.clear(), 3600000)
+    }, [])
 
     return(
         <div>

@@ -27,6 +27,7 @@ export const CartProvider = ({ children }) => {
 
         if(exist) {
         setCart(cart.map(x => x.id === item.id ? { ...exist, quantity: exist.quantity + 1 } : x))
+        
 
         } else {
             setCart([...cart, {...item, quantity: 1}])

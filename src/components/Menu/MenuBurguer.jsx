@@ -52,6 +52,7 @@ const Menu = ({ open }) => {
         </a>
         <a title="Em Manuntenção" style={{cursor: "not-allowed"}}>
         Video-games
+        <br />
         </a>
     </StyledMenu>
   )

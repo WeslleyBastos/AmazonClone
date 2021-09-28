@@ -24,7 +24,7 @@ export const Cart = () => {
             <div className="container-items">
 
             <hr className="hr-separator-two" />
-            
+                
                 <img src={car.img_url} alt="alexa" />
                 <h1 style={{position: "relative", left: "-0.5rem"}}>{car.title.slice(0,50) + "..."}</h1>
                 <h1>R$ {car.price}</h1>
@@ -35,7 +35,7 @@ export const Cart = () => {
                 </div>
 
                 <div className="h3">
-                    <h3>Cor: {car.color}</h3>
+                    <h3><strong>Cor:</strong> {car.color}</h3>
 
                 <div className="container-controll">
                     <button onClick={() => removeItem(car)}>-</button>

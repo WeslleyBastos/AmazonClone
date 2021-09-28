@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SearchBox = styled.div`
     background-color: var(--dark-blue);
     width: 100vw;
-    height: 12vh;
+    height: 11vh;
     display: flex;
     align-items: center;
     
@@ -26,8 +26,8 @@ export const SearchBox = styled.div`
     }
     
     .cart{
-        width: 60px;
-        height: 50px;
+        width: 50px;
+        height: 40px;
         color: var(--orange);
     }
 `
@@ -39,12 +39,18 @@ export const MenuBox = styled.div`
     justify-content: space-between;
     z-index: 1000;
 
-    p{
+    a {
+        color: #fff;
+        margin-left: 2.7rem;
+        margin-top: 0.35rem;
+    }
+
+    /* p{
         color: white;
-        margin: 5px 2.4rem;
+        margin: 5px 1.4rem;
         font-weight: 600;
         font-size: 18px;
-    }
+    } */
     span{
         color: white;
         margin: 5px 1rem;

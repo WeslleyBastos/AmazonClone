@@ -7,6 +7,7 @@ import { Container, Footer, Form, Header } from "./styles";
 import { Link } from "react-router-dom"
 import { useAuthentication } from "../../providers/Authentication";
 import { api } from "../../services";
+import { toast } from "react-hot-toast"
 
 export const RegisterPage = () => {
 
@@ -32,8 +33,22 @@ export const RegisterPage = () => {
         data.localidade = ""
         data.uf = ""
          api.post('/register', data)
-        .then(_ => {alert("Cadastro concluído"); history.push("/login")})
-        .catch(_ => alert("E-mail ou usuário já cadastrado"))
+        .then(_ => {
+            toast.success("Cadastro concluído", {
+                style: {
+                    backgroundColor: "#007600",
+                    color: "#fff",
+                },
+            }); 
+            history.push("/login")
+        })
+        .catch(_ => toast.error("E-mail ou usuário já cadastrado", {
+            style: {
+                backgroundColor: "#f34f74",
+                color: "#fff",
+                fontWeight: "bold",
+            },
+        }))
     }
 
 
