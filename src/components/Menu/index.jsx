@@ -15,7 +15,7 @@ import { useCart } from "../../providers/CartProvider";
 const MenuNav = () => {
 
     const [open, setOpen] = useState(false);
-    const { userName } = useAuthentication();
+    const { userName, authenticated } = useAuthentication();
     const { cart } = useCart();
     const node = useRef(); 
     const history = useHistory();
@@ -42,21 +42,28 @@ const MenuNav = () => {
                     </p>
                 <h3 className="account" style={{cursor: "pointer"}} onClick={() => history.push("/InfoClient")}>Account and Lists</h3>
             </div>
-            <RiShoppingCartLine className="cart" onClick={() => history.push("/cart")} title="Carrinho" style={{cursor: "pointer"}}/>
-            <Badge size="default" count={cart.length}/>
+
+            {!authenticated ? 
+             <RiShoppingCartLine className="cart" onClick={() => history.push("/register")} title="Carrinho" style={{cursor: "pointer"}}/>
+             :
+             <RiShoppingCartLine className="cart" onClick={() => history.push("/cart")} title="Carrinho" style={{cursor: "pointer"}}/>
+
+            }
+
+            <Badge style={{position: "relative", left: "-1.1rem", top: "-1rem"}}size="default" count={cart.length}/>
             </SearchBox>
         
-            <MenuBox ref={node} >
+            <MenuBox ref={node} className="teste">
                 <Burger open={open} setOpen={setOpen} />
                 <MenuBurguer open={open} setOpen={setOpen} />
-                <p>All</p>
-                <span>Today’s Deals</span>
-                <span>Costumer Service</span>
-                <span>Buy Again</span>
-                <span>User’s wishlist</span>
-                <span>Gift Card</span>
-                <span>Registry</span>
-                <span>Sell</span>
+                <a href="#">All</a>
+                <a href="#">Today’s Deals</a >
+                <a href="#">Costumer Service</a >
+                <a href="#">Buy Again</a >
+                <a href="#">User’s wishlist</a >
+                <a href="#">Gift Card</a >
+                <a href="#">Registry</a >
+                <a href="#">Sell</a >
                 <span>Amazon’s response to COVID-19</span>          
             </MenuBox>
 

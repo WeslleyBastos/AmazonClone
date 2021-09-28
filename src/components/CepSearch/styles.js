@@ -17,6 +17,7 @@ export const ContainerParent = styled.main `
         padding: 1rem ;
         gap: 15px;
         border-radius: 16px;
+        background-color: #fff;
     }
 
     .info-address h2:first-child {
@@ -57,6 +58,7 @@ export const ContainerSearch = styled.div `
     margin: 5% auto;
     padding: 25px;
     box-shadow: 0 0 3pt 2pt #F27723;
+    background-color: #fff;
 
     .btn-center {
         display: block;

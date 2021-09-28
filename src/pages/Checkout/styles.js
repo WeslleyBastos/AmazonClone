@@ -4,11 +4,14 @@ export const ContainerCheckout = styled.main `
     display: flex;
     justify-content: space-evenly;
     margin: 0%;
+    overflow-y: hidden;
 
     .product {
         width: 60vw;
-        height: 28vh;
+        height: 68vh;
         border-radius: 15px;
+        overflow-y: scroll 50px;
+        overflow-x: hidden;
 
         .prods {
             display: flex;
@@ -23,8 +26,8 @@ export const ContainerCheckout = styled.main `
         }
 
         img {
-            max-height: 120px;
-            max-width: 200px;
+            height: 120px;
+            max-width: 150px;
         }
 
         span {

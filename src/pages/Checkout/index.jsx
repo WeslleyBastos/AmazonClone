@@ -6,23 +6,26 @@ import { useHistory } from "react-router-dom"
 import { api } from "../../services";
 import { useState, useEffect } from "react"
 import { AiOutlineReload } from "react-icons/ai"
+import { toast } from "react-hot-toast"
 
 export const Checkout = () => {
 
-    const { userId, userName, emailUser, cepsUser, logradouroUser, bairroUser, localidadeUser, ufUser, numberHouse, complement, user, setUser } = useAuthentication();
-
+    const { userId, userName, emailUser, cepsUser, logradouroUser, bairroUser, localidadeUser, ufUser, user, setUser } = useAuthentication();
     const { cart, setCart } = useCart(); 
+
     const history = useHistory();
    
     const [isLoading, setIsLoading] = useState(false)
 
-    console.log(numberHouse, complement)
-
     const handleSendDemand =  () => {
-        setTimeout(() => {
-            alert(`Seu pedido está em processamento e será enviado para ${user.numberHouse}, ${user.complement}`)
+        toast.success((`Seu pedido está em processamento e será enviado para ${user.numberHouse}, ${user.complement}`), {
+            style: {
+                backgroundColor: "#007600",
+                color: "#fff",
+            },
+        })
             setCart([])
-        }, 1000)
+
         setTimeout(() => {
             history.push("/")
         }, 2000)
@@ -35,10 +38,6 @@ export const Checkout = () => {
         .catch(err => console.log(err))
     }, [])
 
-
-    // setTimeout(() => {
-    //     window.location.reload();
-    //  }, 1000)
 
     return (
         <div style={{backgroundColor: "lightgray", height: "100vh"}}>

@@ -19,11 +19,13 @@ import {Divider} from "antd"
 import { useParams, useHistory } from "react-router";
 import MenuNav from "../Menu"
 import { useCart } from "../../providers/CartProvider"
+import { RiLockPasswordFill } from "react-icons/ri"
+import { toast } from "react-hot-toast"
 
 const ProductContent = () => {
 
     const [productEspecific, setProductEspecific] = useState([])
-    const [select, setSelect] = useState("")
+    const [numberAleatorio] = useState(Math.floor(Math.random() * 100))
 
     const { id } = useParams();
     const { handleAddToCart } = useCart();
@@ -47,15 +49,15 @@ const ProductContent = () => {
                 <img className="main-img"src={prodss.img_url} alt="product/id" />
             </ImgContainer>
             <InfoContainer>
-                <h2>{prodss.title.slice(0, 35) + "..."}</h2>
-                <p className="brand"> Marca: Amazon</p>
-                <div className="rating">
-                <img src={rating} alt="rating" />
-                (55) </div>
+                <strong>{prodss.title.slice(0, 75) + "..."}</strong>
+                <p className="brand"> Marca: {prodss.brand}</p>
+                <div className="rating" style={{display: "flex", alignItems: "center"}}>
+                <img src={rating} alt="rating" /> {" "} <span>&nbsp;{numberAleatorio} avaliações de clientes</span>
+                </div>
                 <div className="indica"> <p className="first">Amazon <span>indica</span></p></div>
                 <div className="price">
-                    <p> De: R$ {prodss.original_price}</p>
-                    <p className="descount">Por:<span> R$ {prodss.price} </span> (à vista 5% off)</p>
+                    <p className="de-por"> De: R$ {prodss.original_price}</p>
+                    <p className="descount">Por:<span> R$ {prodss.price} </span> (à vista {prodss.discount}% off)</p>
                     <p className="installment"> ou 10x sem juros de R$21,90 SEM JUROS</p>
                 </div>
                 <div className="d-icons">
@@ -73,20 +75,37 @@ const ProductContent = () => {
                 </div>
             </InfoContainer>
             <OrderContainer>
-                <p className="order-price"> R$ {prodss.price} à vista</p>
-                <p className="order-installment"> Ou em até 12x de {prodss.installment}</p>
+                <p className="order-price"> R$ {prodss.price.toFixed(2)}</p>
+                <div className="frete"><span>Entrega com frete</span> <p>GRATIS!</p></div>
 
-                <div className="frete"><span>Entrega elegivel com frete</span> <p>GRATIS!</p></div>
+                <div className="about-frete">
+                    <p><span className="color-normal">Entrega mais rápida:</span> <span className="span-bold"> Daqui 2 dias </span>
+                    <span className="gray">Se pedir dentro de 14 h e 41 min</span></p>
+                </div>
+
                 <span className="stock"> Em estoque</span>
-                <span className="quantity">Quantidade: 
-                    <select>
+                <span className="quantity">Quantidade:&nbsp; 
+                    <select className="select">
                         <option>1</option>
                     </select>
                 </span>
 
-                  <button  className="addToCart" onClick={() => {handleAddToCart(prodss); history.push("/cart")}}> Adicionar ao Carrinho</button>
-                
-                <button className="addToFavorites"> Lista de desejos</button>
+                  <button  className="addToCart" onClick={() => {
+                      handleAddToCart(prodss); 
+                      history.push("/cart");
+                      toast.success("Item adicionado ao carrinho!", {
+                        style: {
+                            backgroundColor: "#007600",
+                            color: "#fff",
+                        },
+                    });
+                      }}> Adicionar ao Carrinho</button>
+
+                <div style={{display: "flex", width: "100%", alignItems: "center", justifyContent: "center"}}>
+                    <RiLockPasswordFill style={{margin: "0.4rem"}}/>
+                    {" "}
+                    <h6 style={{color: "#007185"}}>Transação segura </h6>
+                </div>
             </OrderContainer>
         </ProdContainer>
             ))}

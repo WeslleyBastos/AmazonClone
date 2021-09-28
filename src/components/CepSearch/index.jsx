@@ -2,7 +2,8 @@ import { useCep } from "../../providers/CepProvider"
 import { ContainerParent, ContainerSearch } from "./styles";
 import { useAuthentication } from "../../providers/Authentication"
 import { api } from "../../services"
-import { useState } from "react"
+import { toast } from "react-hot-toast"
+
 import { useHistory } from "react-router"
 
 export const CepSearch = () => {
@@ -17,10 +18,23 @@ export const CepSearch = () => {
         api.patch(`/users/${userId}/`, {...ceps, numberHouse, complement}, {
             headers: { Authorization: `Bearer ${token}`}
         })
-        .then(res => {alert('Dados atualizados'); history.push("/Checkout")})
+        .then(res => {
+            toast.success("Dados alterados!", {
+                style: {
+                    backgroundColor: "#007600",
+                    color: "#fff",
+                },
+            });
+            history.push("/Checkout")
+        })
         .catch(_ => {
             if(!authenticated) {
-                alert("Parece que você não está logado...")
+                toast.error("Erro ao alterar os dados, parece que você não está logado!", {
+                    style: {
+                        backgroundColor: "#f34f74",
+                        color: "#fff",
+                    },
+                });
                 localStorage.clear();
                 history.push("/register")
             }

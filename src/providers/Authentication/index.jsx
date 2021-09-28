@@ -5,11 +5,11 @@ const AuthenticationContext = createContext();
 
 export const AuthenticationProvider = ({ children }) => {
 
-    const [authenticated, setAuthenticated] = useState(false)
     const [token] = useState(JSON.parse(localStorage.getItem("@token/auth")) || "")
+    const userId = JSON.parse(localStorage.getItem("@token/userId"));
+    const [authenticated, setAuthenticated] = useState(false)
     const [userName, setUserName] = useState("");
     const [user, setUser] = useState({})
-    // const [passWord, setPassword] = useState("");
     const [emailUser, setEmail] = useState("");
     const [cepsUser, setCep] = useState("");
     const [logradouroUser, setLogradouro] = useState("");
@@ -18,7 +18,6 @@ export const AuthenticationProvider = ({ children }) => {
     const [ufUser, setUf] = useState("");
     const [numberHouse, setNumber] = useState("");
     const [complement, setComplement] = useState("");
-    const userId = JSON.parse(localStorage.getItem("@token/userId"));
 
     useEffect(() => {
 

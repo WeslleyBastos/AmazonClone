@@ -7,6 +7,7 @@ import { Container, Footer, Form, Header } from "./styles";
 import { useAuthentication } from "../../providers/Authentication";
 import { api } from "../../services";
 import jwt_decode from "jwt-decode";
+import { toast } from "react-hot-toast"
 
 export const Login = () => {
 
@@ -35,7 +36,12 @@ export const Login = () => {
             localStorage.setItem("@token/userId",jwt_decode(res.data.accessToken).sub);
             history.push("/")
         })
-        .catch(_ => alert("E-mail ou usuário já cadastrado"))
+        .catch(_ => toast.error("E-mail ou senha inválidos", {
+            style: {
+                backgroundColor: "#f34f74",
+                color: "#fff",
+            },
+        }))
     }
 
     if(authenticated) {
