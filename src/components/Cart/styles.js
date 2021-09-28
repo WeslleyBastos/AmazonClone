@@ -6,6 +6,7 @@ export const ContainerItemsCart = styled.main `
     flex-direction: column;
     overflow-y: scroll 50px;
     overflow-x: hidden;
+    height: 85vh;
     `
 
 export const ContainerCart = styled.div `
@@ -60,7 +61,7 @@ export const ContainerCart = styled.div `
         }
 
         img {
-            width: 150px;
+            width: 120px;
             height: 102px;
         }
 

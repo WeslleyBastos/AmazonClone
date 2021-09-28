@@ -15,7 +15,7 @@ import { useCart } from "../../providers/CartProvider";
 const MenuNav = () => {
 
     const [open, setOpen] = useState(false);
-    const { userName } = useAuthentication();
+    const { userName, authenticated } = useAuthentication();
     const { cart } = useCart();
     const node = useRef(); 
     const history = useHistory();
@@ -42,7 +42,14 @@ const MenuNav = () => {
                     </p>
                 <h3 className="account" style={{cursor: "pointer"}} onClick={() => history.push("/InfoClient")}>Account and Lists</h3>
             </div>
-            <RiShoppingCartLine className="cart" onClick={() => history.push("/cart")} title="Carrinho" style={{cursor: "pointer"}}/>
+
+            {!authenticated ? 
+             <RiShoppingCartLine className="cart" onClick={() => history.push("/register")} title="Carrinho" style={{cursor: "pointer"}}/>
+             :
+             <RiShoppingCartLine className="cart" onClick={() => history.push("/cart")} title="Carrinho" style={{cursor: "pointer"}}/>
+
+            }
+
             <Badge style={{position: "relative", left: "-1.1rem", top: "-1rem"}}size="default" count={cart.length}/>
             </SearchBox>
         
