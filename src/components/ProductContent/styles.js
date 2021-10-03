@@ -110,7 +110,7 @@ export const OrderContainer = styled.div`
     font-size: 1.2em;
     flex-direction: column;
     width: 21vw;
-    height: 66vh;
+    height: 70vh;
     margin-right:2rem;
     border: solid 1px var(--gray);
     box-shadow: 0 0 3pt 3pt rgba(0, 0, 0, 0.25);
