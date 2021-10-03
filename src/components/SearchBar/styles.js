@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const InputStyle = styled.input`
     background-color: var(--white);
-    width:70vw;
-    height: 6vh;
+    width:69vw;
+    height: 5.8vh;
     margin: 1% 2% 0 -2%;
 
     ::placeholder{
@@ -18,14 +18,15 @@ export const SearchBox = styled.div`
 
     .click-to-search{
         background-color:var(--orange);
-        width: 55px;
-        height: 43px;
-        margin: 9px 0px 0px -50px;
+        width: 45px;
+        height: 6vh;
+        margin: 9.1px 0px 0px -60px;
+        cursor: pointer;
     }
     svg{
         width: 40px;
         height: 20px;
-        margin: 8px 5px 0 0;
+        margin: 5px 0 0 0;
         position: relative;
         top: 0.2rem;
         left: 0.2rem;

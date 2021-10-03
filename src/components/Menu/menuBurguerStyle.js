@@ -6,7 +6,7 @@ export const StyledMenu = styled.nav`
   justify-content: center;
   background: var(--white);
   border-right: solid 7px var(--dark-blue);
-  height: 92vh;
+  height: 89vh;
   text-align: left;
   position: absolute;
   top: 15;
@@ -28,7 +28,7 @@ export const StyledMenu = styled.nav`
   h3{
     font-weight: 600;
     margin-left: 0rem;
-    margin-top: 2.1rem;
+    margin-top: 0rem;
     padding:1rem;
     background-color: var(--dark-blue);
     color: var(--white);
