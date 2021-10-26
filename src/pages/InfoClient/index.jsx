@@ -29,11 +29,11 @@ export const InfoClient = () => {
                     </div>
                 </div>
 
-                <div className="container-box">
+                <div className="container-box" onClick={() => history.push("/login")} >
                     <img src={iconeKey} alt="icone-trocar-senha" />
                     <div className="info-section-prods">
                         <h5>Acesso e segurança</h5>
-                        <p>Alterar o usuário ou senha</p>
+                        <p>Login e Registro</p>
                     </div>
                 </div>
 
