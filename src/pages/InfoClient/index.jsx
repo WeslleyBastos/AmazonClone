@@ -21,7 +21,7 @@ export const InfoClient = () => {
                 <h1>Sua conta</h1>
             <ContainerItems>
 
-                <div className="container-box" style={notAllowed} title="Em manuntenção">
+                <div className="container-box" onClick={() => history.push("/cepClient")}>
                     <img src={iconeBox} alt="icone-pedidos" />
                     <div className="info-section-prods">
                         <h5>Seus pedidos</h5>
@@ -29,7 +29,7 @@ export const InfoClient = () => {
                     </div>
                 </div>
 
-                <div className="container-box" onClick={() => history.push("/login")} >
+                <div className="container-box" onClick={() => history.push("/register")} >
                     <img src={iconeKey} alt="icone-trocar-senha" />
                     <div className="info-section-prods">
                         <h5>Acesso e segurança</h5>
